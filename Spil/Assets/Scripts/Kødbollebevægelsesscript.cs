@@ -9,6 +9,10 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
     public float JumpSpeed = 5f;
     public int OnGround = 0;
     public Rigidbody MyRigidbody;
+    public Rigidbody MyFeetRigid;
+    public Rigidbody Kødbolle2;
+    public Vector3 DistanceMellemKødboller;
+    public Vector3 TrækImellemKødboller;
 
 
 
@@ -49,7 +53,16 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
                 OnGround = 0;
             }
 
-       
+
+           /* DistanceMellemKødboller = Kødbolle2.transform.position - MyRigidbody.transform.position;
+            TrækImellemKødboller = (Kødbolle2.transform.position - MyRigidbody.transform.position) * 0.1f;
+            if (DistanceMellemKødboller.magnitude > 5)
+            {
+                MyRigidbody.velocity = MyRigidbody.velocity + TrækImellemKødboller;
+
+
+            }
+            */
         }
          
 
