@@ -8,6 +8,12 @@ public class tokødbolle : MonoBehaviour {
     public float JumpSpeed = 5f;
     public int OnGround = 0;
     public Rigidbody MyRigidbody;
+    public Rigidbody MyFeetRigid;
+    public Rigidbody Kødbolle1;
+    public Vector3 DistanceMellemKødboller;
+    public Vector3 TrækImellemKødboller;
+    public Joint jointer4;
+    
 
 
 
@@ -21,21 +27,13 @@ public class tokødbolle : MonoBehaviour {
     void Update()
     {
 
-
+       
 
     }
 
     private void FixedUpdate()
     {
-        /*if (Input.GetKey (KeyCode.D))
-        {
-            MoveHøjre(MovementSpeed);
-
-        } else if (Input.GetKey (KeyCode.A))
-        {
-            MoveHøjre(-MovementSpeed);
-        }
-        */
+        
 
         MoveHøjre(MovementSpeed * Input.GetAxis("Horizontal"));
 
@@ -48,25 +46,34 @@ public class tokødbolle : MonoBehaviour {
 
                 OnGround = 0;
             }
-            
-           
-          
-             
-                 
-
-            
+              
         }
 
+        //jointer4.anchor = MyRigidbody.transform.position;
+
+
+        /*DistanceMellemKødboller = Kødbolle1.transform.position - MyRigidbody.transform.position;
+        TrækImellemKødboller = (Kødbolle1.transform.position - MyRigidbody.transform.position) * 0.1f;
+        if (DistanceMellemKødboller.magnitude > 5)
+        {
+            MyRigidbody.velocity = MyRigidbody.velocity - Vector3.Dot(MyRigidbody.velocity, DistanceMellemKødboller.normalized) * DistanceMellemKødboller.
+
+
+        }
+        */
 
     }
-
+    
     public void OnCollisionEnter(Collision collision)
     {
 
+         //if (collision.collider.tag == "Platform" || collision.collider.tag == "Player")
+        
+         OnGround = 1;
         
         
 
-         OnGround = 1;
+         
 
         
 
@@ -88,7 +95,7 @@ public class tokødbolle : MonoBehaviour {
     {
         MyRigidbody.velocity = (Vector3.up * MyRigidbody.velocity.y) + (transform.forward * Speed);
 
-
+        
 
         
     }
