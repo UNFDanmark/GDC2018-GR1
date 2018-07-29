@@ -46,11 +46,11 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if (OnGround == 1)
+            if (OnGround > 0)
             {
                 Jumping(JumpSpeed);
 
-                OnGround = 0;
+                
             }
 
 
@@ -70,7 +70,18 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
 
     public void OnCollisionEnter(Collision collision)
     {
-        OnGround = 1;
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player"))
+        {
+            OnGround++;
+        }
+    }
+
+    public void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player"))
+        {
+            OnGround--;
+        }
     }
 
     public void Jumping (float JumpHeight)
