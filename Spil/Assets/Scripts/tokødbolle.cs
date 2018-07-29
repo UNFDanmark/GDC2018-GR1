@@ -40,11 +40,11 @@ public class tokødbolle : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
 
-            if (OnGround == 1)
+            if (OnGround > 0)
             {
                 Jumping(JumpSpeed);
 
-                OnGround = 0;
+               
             }
               
         }
@@ -68,8 +68,11 @@ public class tokødbolle : MonoBehaviour {
     {
 
          //if (collision.collider.tag == "Platform" || collision.collider.tag == "Player")
-        
-         OnGround = 1;
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player") )
+        {
+            OnGround++;
+        }
+         
         
         
 
@@ -79,7 +82,16 @@ public class tokødbolle : MonoBehaviour {
 
 
     }
-    
+
+    public void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player"))
+        {
+             OnGround--;
+        }
+            
+    }
+
 
     public void Jumping(float JumpHeight)
     {
