@@ -20,4 +20,21 @@ public class Lavascript : MonoBehaviour {
 
 
 	}
+
+    public void OnTriggerEnter(Collider other)
+    {
+        
+        if (other.gameObject.CompareTag("player"))
+        {
+
+            Destroy(other.gameObject);
+        }
+
+
+    }
+
+
+
 }
+
+
