@@ -12,7 +12,7 @@ public class tokødbolle : MonoBehaviour {
     public Rigidbody Kødbolle1;
     public Vector3 DistanceMellemKødboller;
     public Vector3 TrækImellemKødboller;
-    public Joint jointer4;
+    //public Joint jointer4;
     
 
 
