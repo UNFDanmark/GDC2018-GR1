@@ -12,6 +12,8 @@ public class tokødbolle : MonoBehaviour {
     public Rigidbody Kødbolle1;
     public Vector3 DistanceMellemKødboller;
     public Vector3 TrækImellemKødboller;
+    public float StartMass = 2f;
+    public float StåFastVærdi;
     //public Joint jointer4;
     
 
@@ -40,14 +42,26 @@ public class tokødbolle : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
 
-            if (OnGround == 1)
+            if (OnGround > 0)
             {
                 Jumping(JumpSpeed);
 
-                OnGround = 0;
+               
             }
               
         }
+
+        /*if (Input.GetKey(KeyCode.DownArrow) && OnGround > 0)
+        {
+            StåFast();
+
+        }
+        */
+        
+        
+
+
+
 
         //jointer4.anchor = MyRigidbody.transform.position;
 
@@ -64,12 +78,15 @@ public class tokødbolle : MonoBehaviour {
 
     }
     
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
 
          //if (collision.collider.tag == "Platform" || collision.collider.tag == "Player")
-        
-         OnGround = 1;
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player1") )
+        {
+            OnGround++;
+        }
+         
         
         
 
@@ -79,7 +96,16 @@ public class tokødbolle : MonoBehaviour {
 
 
     }
-    
+
+    public void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player1"))
+        {
+             OnGround--;
+        }
+            
+    }
+
 
     public void Jumping(float JumpHeight)
     {
@@ -89,7 +115,14 @@ public class tokødbolle : MonoBehaviour {
 
 
 
+    public void StåFast()
+    {
+        MyRigidbody.velocity = (Vector3.down * StåFastVærdi);
+      
 
+    }
+
+    
 
     public void MoveHøjre(float Speed)
     {
