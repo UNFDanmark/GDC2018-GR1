@@ -2,50 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fjende : MonoBehaviour {
+public class fjende2 : MonoBehaviour {
     public Lavascript MyLavaScript;
-    public Kødbollebevægelsesscript MyKødbolle1;
+    public tokødbolle MyKødbolle2;
     public float explosionRadius;
     public float explosionPower;
     public AudioSource SkadeAfspiller;
     public AudioClip SkadeLyd;
 
-    public int HealthKødbolle1 = 3;
-	// Use this for initialization
-	void Start ()
+    public int HealthKødbolle2 = 3;
+    // Use this for initialization
+    void Start()
     {
 
-          HealthKødbolle1 = 3;
+        HealthKødbolle2 = 3;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
 
-        if (HealthKødbolle1 == 0)
+        if (HealthKødbolle2 == 0)
         {
-            Destroy(MyKødbolle1.gameObject);
+            Destroy(MyKødbolle2.gameObject);
             MyLavaScript.DeathCount++;
-                
+
         }
 
 
 
     }
-    public void OnCollisionEnter (Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("player1"))
+        if (collision.gameObject.CompareTag("player2"))
         {
-            HealthKødbolle1--;
+            HealthKødbolle2--;
             PushObject(collision.gameObject);
             SkadeAfspiller.PlayOneShot(SkadeLyd);
         }
 
 
-        
+
 
     }
-    
+
 
     public void PushObject(GameObject target)
     {
