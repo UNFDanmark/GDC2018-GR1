@@ -12,25 +12,31 @@ public class fjende : MonoBehaviour {
     public int HealthKødbolle1 = 3;
     public int HealthKødbolle2 = 3;
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Start ()
+    {
+
+          HealthKødbolle1 = 3;
+          HealthKødbolle2 = 3;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		if (HealthKødbolle1 >= 0)
+        print("h1: " + HealthKødbolle1);
+        print("h2: " + HealthKødbolle2);
+
+        if (HealthKødbolle2 == 0)
+        {
+            Destroy(MyKødbolle2.gameObject);
+            MyLavaScript.DeathCount++;
+
+        }
+        if (HealthKødbolle1 == 0)
         {
             Destroy(MyKødbolle1.gameObject);
             MyLavaScript.DeathCount++;
                 
         }
 
-        if (HealthKødbolle2 >= 0)
-        {
-            Destroy(MyKødbolle2.gameObject);
-            MyLavaScript.DeathCount++;
-
-        }
 
 
     }

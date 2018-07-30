@@ -20,7 +20,7 @@ public class WinScript : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("player1") || collision.gameObject.CompareTag("player2")
+        if (collision.gameObject.CompareTag("player1") || collision.gameObject.CompareTag("player2"))
         {
              PlayersWon++;
 
@@ -30,7 +30,7 @@ public class WinScript : MonoBehaviour {
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("player1") || collision.gameObject.CompareTag("player2") 
+        if (collision.gameObject.CompareTag("player1") || collision.gameObject.CompareTag("player2"))
         {
             PlayersWon--;
         }

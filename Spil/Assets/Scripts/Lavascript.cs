@@ -29,25 +29,25 @@ public class Lavascript : MonoBehaviour {
     }
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("player1") || collision.gameObject.CompareTag("player2")
+        if (collision.gameObject.CompareTag("player1") || collision.gameObject.CompareTag("player2"))
         {
-             Destroy(collision.gameObject);
 
-             DeathCount++;
+            Destroy(collision.gameObject);
 
+            DeathCount++;
         } 
         
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.CompareTag("player1") || other.gameObject.CompareTag("player2")
+
+        if (other.gameObject.CompareTag("player1") || other.gameObject.CompareTag("player2"))
         {
 
-             Destroy(other.gameObject);
+            Destroy(other.gameObject);
 
-             DeathCount++;
+            DeathCount++;
 
         }
 
