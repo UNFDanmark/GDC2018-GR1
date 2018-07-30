@@ -14,12 +14,15 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
     public Vector3 DistanceMellemKødboller;
     public Vector3 TrækImellemKødboller;
     public float StåFastVærdi = 2f;
+    public AudioSource JumpAudioSource;
+    public AudioClip JumpSound;
+    public AudioClip LandingSound;
     //public int ChekDobbelJump;
 
 
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
 		
 	}
@@ -80,6 +83,8 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
         if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player2"))
         {
             OnGround++;
+            JumpAudioSource.PlayOneShot(LandingSound, 1f);
+
         }
 
         /*
@@ -108,8 +113,8 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
 
     public void Jumping (float JumpHeight)
     {
-        MyRigidbody.velocity = (Vector3.right * MyRigidbody.velocity.x) + (Vector3.up * JumpHeight); 
-
+        MyRigidbody.velocity = (Vector3.right * MyRigidbody.velocity.x) + (Vector3.up * JumpHeight);
+        JumpAudioSource.PlayOneShot(JumpSound, 1f);
     }
 
 

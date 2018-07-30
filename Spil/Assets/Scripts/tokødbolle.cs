@@ -14,8 +14,11 @@ public class tokødbolle : MonoBehaviour {
     public Vector3 TrækImellemKødboller;
     public float StartMass = 2f;
     public float StåFastVærdi;
+    public AudioSource JumpAudioSource;
+    public AudioClip JumpSound;
+    public AudioClip LandingSound;
     //public Joint jointer4;
-    
+
 
 
 
@@ -85,6 +88,8 @@ public class tokødbolle : MonoBehaviour {
         if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player1") )
         {
             OnGround++;
+            JumpAudioSource.PlayOneShot(LandingSound);
+
         }
          
         
@@ -110,6 +115,7 @@ public class tokødbolle : MonoBehaviour {
     public void Jumping(float JumpHeight)
     {
         MyRigidbody.velocity = (Vector3.right * MyRigidbody.velocity.x) + (Vector3.up * JumpHeight);
+        JumpAudioSource.PlayOneShot(JumpSound);
 
     }
 
