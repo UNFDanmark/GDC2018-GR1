@@ -13,6 +13,8 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
     public Rigidbody Kødbolle2;
     public Vector3 DistanceMellemKødboller;
     public Vector3 TrækImellemKødboller;
+    public float StåFastVærdi = 2f;
+    //public int ChekDobbelJump;
 
 
 
@@ -53,46 +55,71 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
                 
             }
 
-
-           /* DistanceMellemKødboller = Kødbolle2.transform.position - MyRigidbody.transform.position;
-            TrækImellemKødboller = (Kødbolle2.transform.position - MyRigidbody.transform.position) * 0.1f;
-            if (DistanceMellemKødboller.magnitude > 5)
+           /* if (Input.GetKey(KeyCode.S) && OnGround > 0)
             {
-                MyRigidbody.velocity = MyRigidbody.velocity + TrækImellemKødboller;
-
+                StåFast();
 
             }
-            */
+
+             DistanceMellemKødboller = Kødbolle2.transform.position - MyRigidbody.transform.position;
+             TrækImellemKødboller = (Kødbolle2.transform.position - MyRigidbody.transform.position) * 0.1f;
+             if (DistanceMellemKødboller.magnitude > 5)
+             {
+                 MyRigidbody.velocity = MyRigidbody.velocity + TrækImellemKødboller;
+
+
+             }
+             */
         }
          
 
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player"))
         {
             OnGround++;
         }
+
+        /*
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            ChekDobbelJump = 1;
+        }
+        */
     }
 
-    public void OnCollisionExit(Collision collision)
+    public void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player"))
         {
             OnGround--;
         }
+
+        /*if(collision.gameObject.CompareTag("player"))
+        {
+            ChekDobbelJump = 0;
+        }
+        */
     }
+
+
 
     public void Jumping (float JumpHeight)
     {
         MyRigidbody.velocity = (Vector3.right * MyRigidbody.velocity.x) + (Vector3.up * JumpHeight); 
 
     }
-    
-        
-        
-    
+
+
+    public void StåFast()
+    {
+        MyRigidbody.velocity = (Vector3.down * StåFastVærdi);
+
+
+    }
+
 
     public void MoveHøjre(float Speed)
     {
