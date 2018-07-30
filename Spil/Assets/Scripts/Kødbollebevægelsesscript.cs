@@ -77,7 +77,7 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
 
     public void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player2"))
         {
             OnGround++;
         }
@@ -92,7 +92,7 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
 
     public void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player2"))
         {
             OnGround--;
         }

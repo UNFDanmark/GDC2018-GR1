@@ -82,7 +82,7 @@ public class tokødbolle : MonoBehaviour {
     {
 
          //if (collision.collider.tag == "Platform" || collision.collider.tag == "Player")
-        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player") )
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player1") )
         {
             OnGround++;
         }
@@ -99,7 +99,7 @@ public class tokødbolle : MonoBehaviour {
 
     public void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player1"))
         {
              OnGround--;
         }

@@ -13,15 +13,16 @@ public class WinScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         WinScreen();
 	}
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("player1") || collision.gameObject.CompareTag("player2")
         {
-            PlayersWon++;
+             PlayersWon++;
 
         }
 
@@ -29,8 +30,11 @@ public class WinScript : MonoBehaviour {
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("player"))
-        PlayersWon--;
+        if (collision.gameObject.CompareTag("player1") || collision.gameObject.CompareTag("player2") 
+        {
+            PlayersWon--;
+        }
+            
     }
 
     public void WinScreen()

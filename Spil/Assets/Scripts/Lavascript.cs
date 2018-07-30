@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Lavascript : MonoBehaviour {
 
-    public Rigidbody Lava;
-    public float LavaRising = 0.2f;
+    
+    
     public int DeathCount = 0;
 
 
@@ -17,9 +17,9 @@ public class Lavascript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        Vector3 ShitFuck = Lava.transform.position;
-        Lava.transform.position = Lava.transform.position + Vector3.up * LavaRising * Time.deltaTime;
+	void Update ()
+    {
+        
 
         if (DeathCount >= 2)
         {
@@ -27,16 +27,27 @@ public class Lavascript : MonoBehaviour {
         }
 
     }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("player1") || collision.gameObject.CompareTag("player2")
+        {
+             Destroy(collision.gameObject);
+
+             DeathCount++;
+
+        } 
+        
+    }
 
     public void OnTriggerEnter(Collider other)
     {
         
-        if (other.gameObject.CompareTag("player"))
+        if (other.gameObject.CompareTag("player1") || other.gameObject.CompareTag("player2")
         {
 
-            Destroy(other.gameObject);
+             Destroy(other.gameObject);
 
-            DeathCount++;
+             DeathCount++;
 
         }
 
