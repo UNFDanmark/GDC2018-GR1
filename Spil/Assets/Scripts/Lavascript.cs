@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Lavascript : MonoBehaviour {
 
-    
-    
+
+    public AudioSource LavaLyde;
+    public AudioClip LavaDødLyd;
     public int DeathCount = 0;
 
 
@@ -46,7 +47,7 @@ public class Lavascript : MonoBehaviour {
         {
 
             Destroy(other.gameObject);
-
+            LavaLyde.PlayOneShot(LavaDødLyd);
             DeathCount++;
 
         }
