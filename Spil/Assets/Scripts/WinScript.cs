@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class WinScript : MonoBehaviour {
 
+
+    public int PlayersWon = 0;
 	// Use this for initialization
 	void Start () {
 		
@@ -12,13 +14,31 @@ public class WinScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        WinScreen();
 	}
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("player"))
+        {
+            PlayersWon++;
+
+        }
+
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("player"))
+        PlayersWon--;
+    }
 
     public void WinScreen()
     {
-
+        if (PlayersWon >= 2)
+        {
+            SceneManager.LoadScene("Winscreen");
+        }
 
     }
 }
