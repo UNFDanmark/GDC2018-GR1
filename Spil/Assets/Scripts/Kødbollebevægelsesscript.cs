@@ -34,15 +34,9 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Model.transform.rotation = Quaternion.Euler(0, 0, 0);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            Model.transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
+        WalkAnimation();
+        
+        
 
 
     }
@@ -143,9 +137,41 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
     public void MoveHøjre(float Speed)
     {
         MyRigidbody.velocity = (Vector3.up * MyRigidbody.velocity.y) + (transform.forward * Speed);
+       
 
-        
 
 
+
+    }
+
+    public void WalkAnimation()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            print("d");
+
+            Model.transform.rotation = Quaternion.Euler(0, 0, 0);
+            if (OnGround > 0)
+            {
+                animator.CrossFade("Walk", crossfadeTime);
+            }
+
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            print("a");
+
+            Model.transform.rotation = Quaternion.Euler(0, 180, 0);
+            if (OnGround > 0)
+            {
+                animator.CrossFade("Walk", crossfadeTime);
+            }
+
+        }
+        else if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.W) && OnGround > 0)
+        {
+            print("stop");
+            animator.CrossFade("Idle",crossfadeTime);
+        }
     }
 }
