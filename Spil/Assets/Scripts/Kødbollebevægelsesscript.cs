@@ -17,6 +17,10 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
     public AudioSource JumpAudioSource;
     public AudioClip JumpSound;
     public AudioClip LandingSound;
+    public float crossfadeTime = 0.2f;
+    public Animator animator;
+    public GameObject Model;
+    public Quaternion Modeldrejer;
     //public int ChekDobbelJump;
 
 
@@ -115,6 +119,7 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
     {
         MyRigidbody.velocity = (Vector3.right * MyRigidbody.velocity.x) + (Vector3.up * JumpHeight);
         JumpAudioSource.PlayOneShot(JumpSound, 1f);
+        animator.CrossFade("Jump", crossfadeTime);
     }
 
 
