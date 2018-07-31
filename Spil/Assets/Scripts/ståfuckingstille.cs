@@ -27,7 +27,7 @@ public class ståfuckingstille : MonoBehaviour {
         transform.position = cameraPosition;
 
 
-        PlayerY = Player.transform.position.y;
+        PlayerY = Player.transform.position.y + 5;
     }
 
 
