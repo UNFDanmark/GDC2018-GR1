@@ -17,6 +17,10 @@ public class tokødbolle : MonoBehaviour {
     public AudioSource JumpAudioSource;
     public AudioClip JumpSound;
     public AudioClip LandingSound;
+    public float crossfadeTime = 0.2f;
+    public Animator animator;
+    public GameObject Model;
+    public Quaternion Modeldrejer;
     //public Joint jointer4;
 
 
@@ -31,7 +35,15 @@ public class tokødbolle : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            Model.transform.rotation = Quaternion.Euler(0, 0, 0);
 
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            Model.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
        
 
     }
@@ -41,6 +53,8 @@ public class tokødbolle : MonoBehaviour {
         
 
         MoveHøjre(MovementSpeed * Input.GetAxis("Horizontal"));
+
+        
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -89,7 +103,7 @@ public class tokødbolle : MonoBehaviour {
         {
             OnGround++;
             JumpAudioSource.PlayOneShot(LandingSound);
-
+            //animator.CrossFade("Idle", crossfadeTime);
         }
          
         
@@ -107,6 +121,7 @@ public class tokødbolle : MonoBehaviour {
         if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("player1"))
         {
              OnGround--;
+             
         }
             
     }
@@ -116,6 +131,7 @@ public class tokødbolle : MonoBehaviour {
     {
         MyRigidbody.velocity = (Vector3.right * MyRigidbody.velocity.x) + (Vector3.up * JumpHeight);
         JumpAudioSource.PlayOneShot(JumpSound);
+        animator.CrossFade("Jump", crossfadeTime);
 
     }
 
