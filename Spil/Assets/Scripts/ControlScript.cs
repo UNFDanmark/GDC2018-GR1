@@ -16,7 +16,7 @@ public class ControlScript : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Return))
         {
-           
+            Destroy(GameObject.FindGameObjectWithTag("DestroyThis"));
             SceneManager.LoadScene("GameScreen");
         }
 	}

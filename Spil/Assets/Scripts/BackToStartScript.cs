@@ -12,7 +12,7 @@ public class BackToStartScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.anyKeyDown)
+        if (Input.GetKeyDown(KeyCode.Return)) 
         {
             SceneManager.LoadScene("StartScreen");
         }

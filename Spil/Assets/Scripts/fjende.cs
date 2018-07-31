@@ -10,6 +10,8 @@ public class fjende : MonoBehaviour {
     public AudioSource SkadeAfspiller;
     public AudioClip SkadeLyd;
     public UiShitTextsomething MyUi;
+    public Animator animator;
+    public float crossfadeTime = 0.2f;
 
     public int HealthKødbolle1 = 3;
 	// Use this for initialization
@@ -17,6 +19,7 @@ public class fjende : MonoBehaviour {
     {
 
           HealthKødbolle1 = 3;
+        animator.CrossFade("Dance", crossfadeTime);
     }
 	
 	// Update is called once per frame
@@ -33,6 +36,8 @@ public class fjende : MonoBehaviour {
 
 
     }
+   
+
     public void OnCollisionEnter (Collision collision)
     {
         DamagePlayer1(collision);

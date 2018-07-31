@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class fjende2 : MonoBehaviour {
     public Lavascript MyLavaScript;
-    public tokødbolle MyKødbolle2;
+    public tokødbolle MyKødbolle1;
     public float explosionRadius;
     public float explosionPower;
     public AudioSource SkadeAfspiller;
     public AudioClip SkadeLyd;
-    public UiShitTextsomething myUi;
+    public UiShitTextsomething MyUi;
+    public Animator animator;
+    public float crossfadeTime = 0.2f;
 
-    public int HealthKødbolle2 = 3;
+    public int HealthKødbolle1 = 3;
     // Use this for initialization
     void Start()
     {
 
-        HealthKødbolle2 = 3;
+        HealthKødbolle1 = 3;
+        animator.CrossFade("Dance", crossfadeTime);
     }
 
     // Update is called once per frame
@@ -24,9 +27,9 @@ public class fjende2 : MonoBehaviour {
     {
 
 
-        if (HealthKødbolle2 <= 0)
+        if (HealthKødbolle1 <= 0)
         {
-            Destroy(MyKødbolle2.gameObject);
+            Destroy(MyKødbolle1.gameObject);
             MyLavaScript.DeathCount++;
 
         }
@@ -34,9 +37,12 @@ public class fjende2 : MonoBehaviour {
 
 
     }
+
+
     public void OnCollisionEnter(Collision collision)
     {
-        DamagePlayer2(collision);
+        DamagePlayer1(collision);
+
 
 
 
@@ -50,15 +56,16 @@ public class fjende2 : MonoBehaviour {
         explosionDirection.Normalize();
         hitRigidbody.AddForce(explosionDirection * explosionPower, ForceMode.Impulse);
     }
-    
-    public void DamagePlayer2(Collision collide)
+
+    public void DamagePlayer1(Collision colidi)
     {
-        if (collide.gameObject.CompareTag("player2"))
+        if (colidi.gameObject.CompareTag("player2"))
         {
-            HealthKødbolle2--;
-            PushObject(collide.gameObject);
+            HealthKødbolle1--;
+            PushObject(colidi.gameObject);
             SkadeAfspiller.PlayOneShot(SkadeLyd);
-            myUi.LoseHealthPlayer2();
+            MyUi.LoseHealthPlayer2();
         }
+
     }
 }
