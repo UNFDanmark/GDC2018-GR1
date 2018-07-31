@@ -1,62 +1,9 @@
 fileFormatVersion: 2
-guid: d4813bb7a7890be489a35fb45829bc42
+guid: 54e13eb5f1637d3438e8ff1d410534e9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Bone001
-    100002: Bone001(mirrored)
-    100004: Bone002
-    100006: Bone002(mirrored)
-    100008: Bone003
-    100010: Bone003(mirrored)
-    100012: Bone004
-    100014: Bone004(mirrored)
-    100016: Bone005
-    100018: Bone005(mirrored)
-    100020: Box001
-    100022: COM
-    100024: COM NUbb
-    100026: //RootNode
-    100028: L - Fod 1
-    100030: L- Ben- 1
-    100032: L- Ben- 2
-    100034: "L- T\xE6er "
-    100036: "L- T\xE6er Nubb"
-    100038: R- Ben- 1
-    100040: "R- T\xE6er"
-    100042: R-Ben 2
-    100044: R-Fod 1
-    100046: "R-T\xE6er-Nubb"
-    100048: Sphere001
-    400000: Bone001
-    400002: Bone001(mirrored)
-    400004: Bone002
-    400006: Bone002(mirrored)
-    400008: Bone003
-    400010: Bone003(mirrored)
-    400012: Bone004
-    400014: Bone004(mirrored)
-    400016: Bone005
-    400018: Bone005(mirrored)
-    400020: Box001
-    400022: COM
-    400024: COM NUbb
-    400026: //RootNode
-    400028: L - Fod 1
-    400030: L- Ben- 1
-    400032: L- Ben- 2
-    400034: "L- T\xE6er "
-    400036: "L- T\xE6er Nubb"
-    400038: R- Ben- 1
-    400040: "R- T\xE6er"
-    400042: R-Ben 2
-    400044: R-Fod 1
-    400046: "R-T\xE6er-Nubb"
-    400048: Sphere001
-    2100000: No Name
-    4300000: Sphere001
-    9500000: //RootNode
-    13700000: Sphere001
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -88,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.03
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -107,9 +54,9 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
-    previousCalculatedGlobalScale: 0.05
-    hasPreviousCalculatedGlobalScale: 1
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

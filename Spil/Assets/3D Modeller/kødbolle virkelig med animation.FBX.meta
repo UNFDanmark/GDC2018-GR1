@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4813bb7a7890be489a35fb45829bc42
+guid: 257df77bba9d9274cb7b411580c382e2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -14,20 +14,22 @@ ModelImporter:
     100016: Bone005
     100018: Bone005(mirrored)
     100020: Box001
-    100022: COM
-    100024: COM NUbb
-    100026: //RootNode
-    100028: L - Fod 1
-    100030: L- Ben- 1
-    100032: L- Ben- 2
-    100034: "L- T\xE6er "
-    100036: "L- T\xE6er Nubb"
-    100038: R- Ben- 1
-    100040: "R- T\xE6er"
-    100042: R-Ben 2
-    100044: R-Fod 1
-    100046: "R-T\xE6er-Nubb"
-    100048: Sphere001
+    100022: Box002
+    100024: Box005
+    100026: COM
+    100028: COM NUbb
+    100030: //RootNode
+    100032: L - Fod 1
+    100034: L- Ben- 1
+    100036: L- Ben- 2
+    100038: "L- T\xE6er "
+    100040: "L- T\xE6er Nubb"
+    100042: R- Ben- 1
+    100044: "R- T\xE6er"
+    100046: R-Ben 2
+    100048: R-Fod 1
+    100050: "R-T\xE6er-Nubb"
+    100052: Sphere001
     400000: Bone001
     400002: Bone001(mirrored)
     400004: Bone002
@@ -39,22 +41,25 @@ ModelImporter:
     400016: Bone005
     400018: Bone005(mirrored)
     400020: Box001
-    400022: COM
-    400024: COM NUbb
-    400026: //RootNode
-    400028: L - Fod 1
-    400030: L- Ben- 1
-    400032: L- Ben- 2
-    400034: "L- T\xE6er "
-    400036: "L- T\xE6er Nubb"
-    400038: R- Ben- 1
-    400040: "R- T\xE6er"
-    400042: R-Ben 2
-    400044: R-Fod 1
-    400046: "R-T\xE6er-Nubb"
-    400048: Sphere001
+    400022: Box002
+    400024: Box005
+    400026: COM
+    400028: COM NUbb
+    400030: //RootNode
+    400032: L - Fod 1
+    400034: L- Ben- 1
+    400036: L- Ben- 2
+    400038: "L- T\xE6er "
+    400040: "L- T\xE6er Nubb"
+    400042: R- Ben- 1
+    400044: "R- T\xE6er"
+    400046: R-Ben 2
+    400048: R-Fod 1
+    400050: "R-T\xE6er-Nubb"
+    400052: Sphere001
     2100000: No Name
     4300000: Sphere001
+    7400000: Take 001
     9500000: //RootNode
     13700000: Sphere001
   externalObjects: {}
@@ -84,11 +89,39 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: -1
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.03
+    globalScale: 0.028
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -107,8 +140,8 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
-    previousCalculatedGlobalScale: 0.05
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.028
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
