@@ -148,7 +148,7 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            print("d");
+            
 
             Model.transform.rotation = Quaternion.Euler(0, 0, 0);
             if (OnGround > 0)
@@ -159,7 +159,7 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            print("a");
+            
 
             Model.transform.rotation = Quaternion.Euler(0, 180, 0);
             if (OnGround > 0)
@@ -170,7 +170,7 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
         }
         else if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.W) && OnGround > 0)
         {
-            print("stop");
+           
             animator.CrossFade("Idle",crossfadeTime);
         }
     }
