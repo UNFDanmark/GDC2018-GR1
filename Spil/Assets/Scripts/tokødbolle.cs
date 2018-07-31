@@ -35,16 +35,9 @@ public class tokødbolle : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            Model.transform.rotation = Quaternion.Euler(0, 0, 0);
+        WalkAnimation();
 
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Model.transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-       
+
 
     }
 
@@ -53,8 +46,11 @@ public class tokødbolle : MonoBehaviour {
         
 
         MoveHøjre(MovementSpeed * Input.GetAxis("Horizontal"));
+       
 
-        
+
+
+
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -149,9 +145,37 @@ public class tokødbolle : MonoBehaviour {
     public void MoveHøjre(float Speed)
     {
         MyRigidbody.velocity = (Vector3.up * MyRigidbody.velocity.y) + (transform.forward * Speed);
-
         
 
-        
+
+
     }
+
+    public void WalkAnimation()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            Model.transform.rotation = Quaternion.Euler(0, 0, 0);
+            if (OnGround > 0)
+            {
+                animator.CrossFade("Walk", crossfadeTime);
+            }
+
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            Model.transform.rotation = Quaternion.Euler(0, 180, 0);
+            if (OnGround > 0)
+            {
+                animator.CrossFade("Walk", crossfadeTime);
+            }
+        }
+        else if (!Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.UpArrow) && OnGround > 0)
+        {
+            print("stop");
+            animator.CrossFade("Idle", crossfadeTime);
+        }
+    }
+
+
 }

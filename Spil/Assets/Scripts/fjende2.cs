@@ -24,7 +24,7 @@ public class fjende2 : MonoBehaviour {
     {
 
 
-        if (HealthKødbolle2 == 0)
+        if (HealthKødbolle2 <= 0)
         {
             Destroy(MyKødbolle2.gameObject);
             MyLavaScript.DeathCount++;

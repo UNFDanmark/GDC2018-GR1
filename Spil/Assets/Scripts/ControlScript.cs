@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Startscript : MonoBehaviour {
+public class ControlScript : MonoBehaviour {
+    public Startscript ShitButTop;
 
-    public AudioSource StartMusic;
+ 
 	// Use this for initialization
 	void Start () {
-        DontDestroyOnLoad(StartMusic);
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.anyKeyDown)
+		if (Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene("ControlScreen");
+           
+            SceneManager.LoadScene("GameScreen");
         }
-        
-            
-        
 	}
 }
