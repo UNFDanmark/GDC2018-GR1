@@ -9,6 +9,7 @@ public class fjende : MonoBehaviour {
     public float explosionPower;
     public AudioSource SkadeAfspiller;
     public AudioClip SkadeLyd;
+    public UiShitTextsomething MyUi;
 
     public int HealthKødbolle1 = 3;
 	// Use this for initialization
@@ -34,12 +35,7 @@ public class fjende : MonoBehaviour {
     }
     public void OnCollisionEnter (Collision collision)
     {
-        if (collision.gameObject.CompareTag("player1"))
-        {
-            HealthKødbolle1--;
-            PushObject(collision.gameObject);
-            SkadeAfspiller.PlayOneShot(SkadeLyd);
-        }
+        DamagePlayer1(collision);
 
 
         
@@ -53,6 +49,18 @@ public class fjende : MonoBehaviour {
         Vector3 explosionDirection = hitRigidbody.transform.position - transform.position;
         explosionDirection.Normalize();
         hitRigidbody.AddForce(explosionDirection * explosionPower, ForceMode.Impulse);
+    }
+
+    public void DamagePlayer1(Collision colidi)
+    {
+        if (colidi.gameObject.CompareTag("player1"))
+        {
+            HealthKødbolle1--;
+            PushObject(colidi.gameObject);
+            SkadeAfspiller.PlayOneShot(SkadeLyd);
+            MyUi.LoseHealthPlayer1();
+        }
+
     }
 
 }
