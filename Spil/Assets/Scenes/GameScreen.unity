@@ -2532,6 +2532,26 @@ Prefab:
       propertyPath: m_TagString
       value: ground
       objectReference: {fileID: 0}
+    - target: {fileID: 23113182459378146, guid: f986f667cace35d4d8d3df7ddff899cc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23242345148406562, guid: f986f667cace35d4d8d3df7ddff899cc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23568238263465788, guid: f986f667cace35d4d8d3df7ddff899cc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23568690689932408, guid: f986f667cace35d4d8d3df7ddff899cc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f986f667cace35d4d8d3df7ddff899cc, type: 2}
   m_IsPrefabAsset: 0
@@ -4404,7 +4424,7 @@ GameObject:
   - component: {fileID: 912156743}
   m_Layer: 10
   m_Name: "K\xF8dbolle 1 (1)"
-  m_TagString: player2
+  m_TagString: player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8109,6 +8129,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1766525651
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 688883051}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.017831378
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70688194
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.017831378
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70688194
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9974571
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5012716
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 2.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 61ed1b8aa77ade34fa4b0347e06aff4f, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3e1f827497944f0428b320ae4014dc70, type: 3}
+  m_IsPrefabAsset: 0
 --- !u!1 &1767960000
 GameObject:
   m_ObjectHideFlags: 0
@@ -8127,7 +8213,7 @@ GameObject:
   - component: {fileID: 1767960009}
   m_Layer: 10
   m_Name: "K\xF8dbolle 2"
-  m_TagString: player1
+  m_TagString: player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
