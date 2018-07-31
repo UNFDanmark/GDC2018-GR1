@@ -418,7 +418,7 @@ MonoBehaviour:
   MyLavaScript: {fileID: 0}
   "MyK\xF8dbolle1": {fileID: 0}
   explosionRadius: 5
-  explosionPower: 40
+  explosionPower: 30
   SkadeAfspiller: {fileID: 82305029226987308}
   SkadeLyd: {fileID: 8300000, guid: 363f07eb57349df44b12642990425a2d, type: 3}
   MyUi: {fileID: 0}
@@ -437,7 +437,7 @@ MonoBehaviour:
   MyLavaScript: {fileID: 0}
   "MyK\xF8dbolle2": {fileID: 0}
   explosionRadius: 5
-  explosionPower: 40
+  explosionPower: 30
   SkadeAfspiller: {fileID: 82305029226987308}
   SkadeLyd: {fileID: 8300000, guid: 363f07eb57349df44b12642990425a2d, type: 3}
   myUi: {fileID: 0}

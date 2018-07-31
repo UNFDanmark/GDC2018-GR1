@@ -17,6 +17,10 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
     public AudioSource JumpAudioSource;
     public AudioClip JumpSound;
     public AudioClip LandingSound;
+    public float crossfadeTime = 0.2f;
+    public Animator animator;
+    public GameObject Model;
+    public Quaternion Modeldrejer;
     //public int ChekDobbelJump;
 
 
@@ -30,10 +34,18 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-     
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Model.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            Model.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
 
 
-	}
+    }
 
     private void FixedUpdate()
     {
@@ -54,8 +66,9 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
             if (OnGround > 0)
             {
                 Jumping(JumpSpeed);
+                animator.CrossFade("Jump", crossfadeTime);
 
-                
+
             }
 
            /* if (Input.GetKey(KeyCode.S) && OnGround > 0)
@@ -115,6 +128,7 @@ public class Kødbollebevægelsesscript : MonoBehaviour {
     {
         MyRigidbody.velocity = (Vector3.right * MyRigidbody.velocity.x) + (Vector3.up * JumpHeight);
         JumpAudioSource.PlayOneShot(JumpSound, 1f);
+        //animator.CrossFade("Jump", crossfadeTime);
     }
 
 
