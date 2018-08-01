@@ -1,0 +1,6 @@
+Meatball Mayhem er en kooperativ 2D platformer, hvor 2 kødboller kæmper for at overleve en stigende kødsovs. 
+De to kødboller er bundet sammen af en streng spaghetti, som spillerne er nødt til at udnytte til deres fordel for at klare banen. 
+For at komme fra platform til platform må kødbollerne hoppe på og af hinanden og trække hinanden opad. 
+Når toppen nåes, er spillet vundet.
+Held og lykke! :)
+
